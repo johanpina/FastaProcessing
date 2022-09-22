@@ -1,0 +1,13 @@
+$ mongoimport --db Taller --collection cancerprot --file dataProt.json --jsonArray
+$ mongo
+
+
+show dbs;
+use Taller;
+show collections;
+
+db.cancerprot.find().count();
+db.cancerprot.find({"Organism":{$regex : "Human"}});
+db.cancerprot.find({"Organism":{$regex : "Human"}}).count();
+db.cancerprot.find({"Reviewed":"reviewed"});
+db.cancerprot.find({"Reviewed":"reviewed"}).count();
